@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Trash2, AlertTriangle, ArrowLeft } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 import "./DeleteAccount.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function DeleteAccount() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ function DeleteAccount() {
       const token = localStorage.getItem("skillbridgeToken");
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/delete-account",
+        `${API_BASE_URL}/api/auth/delete-account`,
         {
           method: "DELETE",
           headers: {

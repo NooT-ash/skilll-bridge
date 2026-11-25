@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff, LockKeyhole, ArrowLeft } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 import "./ChangePassword.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function ChangePassword() {
   const navigate = useNavigate();
@@ -74,7 +75,7 @@ function ChangePassword() {
       const token = localStorage.getItem("skillbridgeToken");
 
       const response = await fetch(
-        "http://localhost:5000/api/auth/change-password",
+        `${API_BASE_URL}/api/auth/change-password`,
         {
           method: "PUT",
           headers: {

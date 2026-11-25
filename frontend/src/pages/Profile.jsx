@@ -19,6 +19,7 @@ import {
 
 import Sidebar from "../components/Sidebar";
 import "../Profile.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function Profile() {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ function Profile() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/profile",
+        `${API_BASE_URL}/api/auth/profile`,
         {
           method: "GET",
           headers: {

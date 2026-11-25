@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, CheckCircle, Sparkles } from "lucide-react";
 import Sidebar from "../components/Sidebar";
 import "./Skills.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function Skills() {
   const navigate = useNavigate();
@@ -169,7 +170,7 @@ function Skills() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/assessment",
+        `${API_BASE_URL}/api/assessment`,
         {
           method: "POST",
           headers: {

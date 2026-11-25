@@ -5,6 +5,7 @@ import { Bookmark, Trash2, ExternalLink } from "lucide-react";
 
 import Sidebar from "../components/Sidebar";
 import "./SavedJobs.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function SavedJobs() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ function SavedJobs() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/saved-jobs",
+          `${API_BASE_URL}/api/saved-jobs`,
           {
             method: "GET",
             headers: {
@@ -62,7 +63,7 @@ function SavedJobs() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/saved-jobs/${id}`,
+        `${API_BASE_URL}/api/saved-jobs/${id}`,
         {
           method: "DELETE",
           headers: {

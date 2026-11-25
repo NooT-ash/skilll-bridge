@@ -14,6 +14,7 @@ import {
 
 import Sidebar from "../components/Sidebar";
 import "./AssessmentResults.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function AssessmentResults() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ function AssessmentResults() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/assessment",
+        `${API_BASE_URL}/api/assessment`,
         {
           method: "GET",
           headers: {

@@ -14,6 +14,7 @@ import {
 
 import Sidebar from "../components/Sidebar";
 import "./EditProfile.css";
+import { API_BASE_URL } from "../config/api.js";
 
 function EditProfile() {
   const navigate = useNavigate();
@@ -42,7 +43,7 @@ function EditProfile() {
 
       try {
         const response = await fetch(
-          "http://localhost:5000/api/auth/profile",
+          `${API_BASE_URL}/api/auth/profile`,
           {
             headers: {
               Authorization: `Bearer ${token}`
@@ -112,7 +113,7 @@ function EditProfile() {
 
     try {
       const response = await fetch(
-        "http://localhost:5000/api/auth/profile",
+        `${API_BASE_URL}/api/auth/profile`,
         {
           method: "PUT",
           headers: {
